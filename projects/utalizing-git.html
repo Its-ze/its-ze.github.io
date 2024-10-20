@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizing Git for Note-Taking and Website Management - It's Z</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to your main CSS file for consistent styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        .project-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .project-container h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+            color: #ff6347;
+        }
+
+        .project-container p, .project-container ul {
+            margin: 10px 0;
+        }
+
+        .project-container ul {
+            padding-left: 20px;
+        }
+
+        .project-container ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #ff6347;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .step-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/short-stories/">Short Stories</a></li>
+                <li><a href="/about/">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="project-container">
+        <h1>Utilizing Git for Note-Taking and Website Management</h1>
+        <p>As I continue to refine my workflow, I’ve begun leveraging Git for both note-taking and website management. Using GitHub Desktop for version control and syncing, I can ensure my notes are securely backed up and that all changes to my website are intentional and properly tracked. Here’s a step-by-step breakdown of how I set this up for my notes using Obsidian and how I manage my website with GitHub Desktop and Visual Studio Code (VS Code).</p>
+        
+        <h2>Setting Up Git for Note-Taking in Obsidian</h2>
+        <h3>Step 1: Create a Git Repository for Your Notes</h3>
+        <ul>
+            <li>Begin by creating a new repository on GitHub. For my setup, I named my repository <strong>gitnotes</strong>.</li>
+            <li>In GitHub Desktop, clone this repository to a folder on your local machine. This folder will store your notes, and GitHub will track any changes you make to them.</li>
+        </ul>
+        
+        
+        <h3>Step 2: Integrate Git with Obsidian</h3>
+        <ul>
+            <li>Open Obsidian and navigate to your settings.</li>
+            <li>Select Community Plugins and search for the Obsidian Git plugin. Install and enable it.</li>
+            <li>This plugin will help display version control information directly within Obsidian, so you can monitor changes to your notes.</li>
+        </ul>
+        
+        
+        <h3>Step 3: Set Up Your Vault to Use Git</h3>
+        <ul>
+            <li>In Obsidian, go to the bottom left of the interface and select Manage Vaults.</li>
+            <li>Choose Create and point the vault destination to the folder where you cloned your Git repository (e.g., <strong>gitnotes</strong>).</li>
+            <li>Now, any notes you create or modify within this vault will be tracked by Git.</li>
+        </ul>
+        
+        
+        <h3>Step 4: Testing Your Setup</h3>
+        <ul>
+            <li>Create a new note in your Obsidian vault as a test.</li>
+            <li>Open GitHub Desktop and you should see this new note listed as a change.</li>
+            <li>Write a commit message (e.g., "Added test note") and select Commit.</li>
+            <li>Then, click Push to upload your changes to GitHub.</li>
+            <li>Navigate to your GitHub repository in your browser, and you should now see your note reflected there.</li>
+        </ul>
+        
+        
+        <p>This setup ensures that all your notes are securely stored and version-controlled. With Git integration, you’ll have a full history of changes, and you can easily roll back to previous versions if needed.</p>
+        
+        <h2>Managing My Website with GitHub Desktop and VS Code</h2>
+        
+        <h3>Step 1: Cloning the Website Repository</h3>
+        <ul>
+            <li>First, open GitHub Desktop and sign in to your GitHub account.</li>
+            <li>Select the repository for your website and click Clone to create a local copy on your machine. This allows you to edit files locally while using Git for version control.</li>
+        </ul>
+        
+        
+        <h3>Step 2: Opening the Repository in VS Code</h3>
+        <ul>
+            <li>After cloning the repository, GitHub Desktop will offer the option to Open in VS Code. Select this option to open the project in Visual Studio Code.</li>
+            <li>In VS Code, you'll have access to built-in Git features such as committing, branching, and pushing changes.</li>
+        </ul>
+        
+        
+        <h3>Step 3: Making and Committing Changes</h3>
+        <ul>
+            <li>Once in VS Code, you can make any necessary edits to your website files.</li>
+            <li>Use the built-in Git functionality to track changes, write commit messages, and ensure everything is properly versioned.</li>
+        </ul>
+        
+        
+        <h3>Step 4: Pushing Changes to GitHub</h3>
+        <ul>
+            <li>After making and saving your edits, you can return to GitHub Desktop to commit and push your changes.</li>
+            <li>The changes will be uploaded to your GitHub repository, and your website will be updated if it’s hosted through GitHub Pages or a similar platform.</li>
+        </ul>
+        
+        
+        <h2>Why I Chose This Workflow</h2>
+        <p>By utilizing Git for both note-taking and website management, I’ve created a system that keeps everything organized, version-controlled, and easily accessible. The integration of Git with Obsidian ensures my notes are always backed up, and I can track every change I make. Similarly, using GitHub Desktop and VS Code for my website development allows for smooth version control and deployment, giving me confidence that I can always roll back changes if needed.</p>
+    </section>
+
+    <footer>
+        <p>© 2024 It's Z - All Rights Reserved.</p>
+        <p>Follow me on: <a href="https://github.com/Its-ze"><i class="fab fa-github"></i></a></p>
+        <p>Contact me: <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
+    </footer>
+</body>
+
+</html>
