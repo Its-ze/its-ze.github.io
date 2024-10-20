@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It's Z - Blog, Projects & Short Stories</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
+    <title>It's Z - Home</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
     <style>
@@ -14,9 +14,6 @@
             line-height: 1.6;
             color: #fff;
             background-color: #000;
-            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-attachment: fixed;
             margin: 0;
             padding: 0;
         }
@@ -47,7 +44,9 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background: rgba(0, 0, 0, 0.7);
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-attachment: fixed;
             color: #fff;
         }
 
@@ -64,12 +63,8 @@
             border-radius: 10px;
         }
 
-        .about {
+        .section-title {
             text-align: center;
-            padding: 40px 20px;
-        }
-
-        .about h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
@@ -98,12 +93,6 @@
             color: #ff6347;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
         }
 
         footer {
@@ -136,15 +125,8 @@
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <h2>About It's Z</h2>
-            <p>Welcome to my personal corner of the internet! Here, I share blog posts, creative short stories, projects, and whatever else comes to mind. Feel free to explore, read, and enjoy. This is a place to find inspiration, and dive into worlds of imagination.</p>
-        </div>
-    </section>
-
     <section class="container">
-        <h2 class="section-title">Latest Blog Posts & Stories</h2>
+        <h2 class="section-title">Explore the Blog</h2>
         <div class="content-section">
             <div class="content-item">
                 <h3>How Linux Changed My Workflow</h3>
@@ -152,63 +134,43 @@
                 <a href="/blog/post1.html">Read More <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="content-item">
-                <h3>A Quiet Evening</h3>
-                <p>A reflection on a serene night, capturing the beauty of stillness.</p>
-                <a href="/stories/story1.html">Read Story <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Embracing Change</h3>
-                <p>Exploring the challenges and opportunities that come with life's changes.</p>
-                <a href="/blog/post2.html">Read More <i class="fas fa-arrow-right"></i></a>
+                <h3>Creating This Website</h3>
+                <p>A journey into building this very website from scratch – the challenges, tools, and experiences along the way.</p>
+                <a href="/projects/website-creation.html">Read More <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <section class="container">
-        <h2 class="section-title">Projects Corner</h2>
+        <h2 class="section-title">Recent Projects</h2>
         <div class="content-section">
+            <div class="content-item">
+                <h3>Learning Git</h3>
+                <p>Exploring version control with Git, how it has helped me manage my code, and my experiences along the way.</p>
+                <a href="/projects/git-learning.html">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
             <div class="content-item">
                 <h3>Personal Website Redesign</h3>
-                <p>A complete overhaul of my personal website, with a focus on accessibility and aesthetics.</p>
+                <p>A complete overhaul of my personal website, focusing on accessibility and aesthetics.</p>
                 <a href="/projects/website-redesign.html">View Project <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Raspberry Pi Home Server</h3>
-                <p>Using a Raspberry Pi to create a home server for file storage and media streaming.</p>
-                <a href="/projects/pi-server.html">View Project <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Automation with Python</h3>
-                <p>Scripts and tools developed to automate daily tasks and improve efficiency.</p>
-                <a href="/projects/python-automation.html">View Project <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <section class="container">
-        <h2 class="section-title">Pictures Corner</h2>
+        <h2 class="section-title">Short Stories</h2>
         <div class="content-section">
             <div class="content-item">
-                <h3>Sunset Over the City</h3>
-                <p>A beautiful sunset captured during a peaceful evening walk.</p>
-                <a href="/pictures/sunset-city.html">View Picture <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Night Sky with Candles</h3>
-                <p>A serene setup of candles under a starlit sky, capturing a mysterious atmosphere.</p>
-                <a href="/pictures/night-candles.html">View Picture <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Forest in Mist</h3>
-                <p>An early morning shot of the forest enveloped in mist, evoking a sense of mystery.</p>
-                <a href="/pictures/forest-mist.html">View Picture <i class="fas fa-arrow-right"></i></a>
+                <h3>A Quiet Evening</h3>
+                <p>A reflection on a peaceful night spent under the stars, capturing the beauty of stillness.</p>
+                <a href="/stories/quiet-evening.html">Read Story <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
         <p>© 2024 It's Z - All Rights Reserved.</p>
-        <p>Follow me on: <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-github"></i></a></p>
+        <p>Follow me on: <a href="https://github.com/Its-ze"><i class="fab fa-github"></i></a></p>
         <p>Contact me: <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
         <p>Discord: hydrah0#326477400626167809</p>
     </footer>
