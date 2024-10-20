@@ -19,17 +19,26 @@
         }
 
         header {
-            background: linear-gradient(135deg, #333, #111);
+            background: linear-gradient(135deg, #4a57a5, #2c2c54);
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-left: 20px;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
-            justify-content: center;
+            margin: 0;
         }
 
         nav ul li {
@@ -50,7 +59,7 @@
 
         .hero {
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
             background-image: url('https://images.unsplash.com/photo-1512486130939-2c4f79933d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-attachment: fixed;
@@ -70,7 +79,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 50px;
             background: rgba(255, 255, 255, 0.05);
@@ -113,11 +122,22 @@
             margin-top: 60px;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
+
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
     <header>
+        <div class="logo">It's Z</div>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
