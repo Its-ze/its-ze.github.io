@@ -50,10 +50,8 @@
 
         .hero {
             text-align: center;
-            padding: 100px 20px;
-            background-image: url('https://images.unsplash.com/photo-1556514767-1b80f0ea4f0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-attachment: fixed;
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #444, #222);
             color: #fff;
             margin-bottom: 60px;
             box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
@@ -79,7 +77,7 @@
         }
 
         .section-title {
-            font-size: 3rem;
+            font-size: 2.8rem;
             text-align: center;
             margin-bottom: 40px;
             color: #ff6347;
@@ -89,14 +87,14 @@
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
-            justify-content: space-between;
+            justify-content: space-around;
         }
 
         .content-item {
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
             padding: 40px;
-            flex: 1 1 calc(33.333% - 20px);
+            flex: 1 1 calc(45% - 40px);
             text-align: center;
             border-radius: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -111,6 +109,11 @@
             margin-bottom: 20px;
             font-size: 2rem;
             color: #ff6347;
+        }
+
+        .content-item p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
         }
 
         .content-item a {
@@ -156,7 +159,7 @@
     </section>
 
     <section class="container">
-        <h1 class="section-title">Blog</h1>
+        <h2 class="section-title">Explore the Blog</h2>
         <div class="content-section">
             <div class="content-item">
                 <h3>Exploring Knowledge Base Solutions for My IT Business</h3>
