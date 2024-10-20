@@ -9,27 +9,24 @@
     <link rel="stylesheet" href="/assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <meta property="og:title" content="Short Stories - It's Z">
+    <meta property="og:description" content="Explore short stories written by It's Z. Dive into tales of peace, introspection, and creativity that will captivate your mind.">
+    <meta property="og:type" content="website">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog/index.html">Blog</a></li>
-                <li><a href="/projects/index.html">Projects</a></li>
-                <li><a href="/short-stories/index.html">Short Stories</a></li>
-                <li><a href="/about/index.html">About Me</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Short Stories</h1>
-            <p>Immerse yourself in a collection of stories that capture moments of stillness, introspection, and creativity.</p>
-        </div>
-    </section>
+    <div id="header-hero-placeholder"></div>
+    <script>
+        // Load header and hero section dynamically from a shared file
+        fetch('/assets/header-hero.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-hero-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading header and hero section:', error);
+            });
+    </script>
 
     <section class="stories-container">
         <!-- Example Short Story Template -->

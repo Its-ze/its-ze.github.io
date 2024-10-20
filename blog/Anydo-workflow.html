@@ -11,23 +11,22 @@
     <meta name="description" content="Learn how Any.do has transformed the way I manage my tasks, integrating seamlessly into my IT work and personal projects.">
     <meta property="og:title" content="Integrating Any.do into My Workflow">
     <meta property="og:description" content="Learn how Any.do has transformed the way I manage my tasks, integrating seamlessly into my IT work and personal projects.">
-    <meta property="og:image" content="URL_TO_AN_IMAGE"> <!-- Use an image that represents your work -->
     <meta property="og:type" content="website">
 </head>
 
 <body>
-    <header>
-        <div class="logo">It's Z</div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog/index.html">Blog</a></li>
-                <li><a href="/projects/index.html">Projects</a></li>
-                <li><a href="/short-stories/index.html">Short Stories</a></li>
-                <li><a href="/about/index.html">About Me</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-hero-placeholder"></div>
+    <script>
+        // Load header and hero section dynamically from a shared file
+        fetch('/assets/header-hero.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-hero-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading header and hero section:', error);
+            });
+    </script>
 
     <section class="hero">
         <div class="container">
