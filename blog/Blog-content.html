@@ -5,125 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating Blog Content: My Workflow</title>
-    <link rel="stylesheet" href="/styles.css"> <!-- Link to your main CSS file for consistent styling -->
+    <link rel="stylesheet" href="assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.8;
-            color: #f0f0f0;
-            background-color: #1a1a1a;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: linear-gradient(135deg, #4a57a5, #2c2c54);
-            color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-left: 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ff6347;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-            background-image: url('https://images.unsplash.com/photo-1505685296765-3a2736de412f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            color: #fff;
-            margin-bottom: 60px;
-            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff6347;
-        }
-
-        h3 {
-            font-size: 2.5rem;
-            margin-top: 30px;
-            color: #ff6347;
-        }
-
-        p {
-            margin: 20px 0;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            background: linear-gradient(135deg, #111, #333);
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 60px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        footer a {
-            color: #ff6347;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
-    </style>
 </head>
 
 <body>
@@ -173,11 +57,17 @@
         <p>Creating blog content doesn’t have to be stressful or time-consuming. By leveraging technology like <strong>ChatGPT</strong> and pairing it with traditional tools like voice recorders, I’ve developed a workflow that works well for me. This approach allows me to share my knowledge in an organized and accessible way while ensuring that each post stays true to my own voice and experiences.</p>
     </section>
 
-    <footer>
-        <p>© 2024 It's Z - All Rights Reserved.</p>
-        <p>Follow me on: <a href="https://github.com/Its-ze" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a></p>
-        <p>Contact me: <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
-    </footer>
+    <!-- Footer Section Included Dynamically -->
+    <div id="footer-placeholder"></div>
+    <script>
+        // Load footer dynamically from contact.html
+        fetch('assets/contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 
 </html>

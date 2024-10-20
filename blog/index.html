@@ -5,161 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - It's Z</title>
-    <link rel="stylesheet" href="/styles.css"> <!-- Link to your main CSS file for consistent styling -->
+    <link rel="stylesheet" href="assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.8;
-            color: #f0f0f0;
-            background-color: #1a1a1a;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: linear-gradient(135deg, #4a57a5, #2c2c54);
-            color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-left: 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ff6347;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(135deg, #444, #222);
-            color: #fff;
-            margin-bottom: 60px;
-            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #ff6347;
-        }
-
-        .content-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: space-around;
-        }
-
-        .content-item {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
-            padding: 40px;
-            flex: 1 1 calc(45% - 40px);
-            text-align: center;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .content-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
-        }
-
-        .content-item h3 {
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: #ff6347;
-        }
-
-        .content-item p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .content-item a {
-            color: #ff6347;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .content-item a:hover {
-            color: #fff;
-        }
-
-        footer {
-            background: linear-gradient(135deg, #111, #333);
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 60px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .footer-social {
-            margin-top: 10px;
-        }
-
-        .footer-social a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            color: #ff6347;
-        }
-    </style>
 </head>
 
 <body>
@@ -204,14 +52,17 @@
         </div>
     </section>
 
-    <footer>
-        <p>© 2024 It's Z - All Rights Reserved.</p>
-        <div class="footer-social">
-            <p>Follow me on:</p>
-            <a href="https://github.com/Its-ze" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a>
-        </div>
-        <p>Contact me: <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
-    </footer>
+    <!-- Footer Section Included Dynamically -->
+    <div id="footer-placeholder"></div>
+    <script>
+        // Load footer dynamically from contact.html
+        fetch('assets/contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 
 </html>
