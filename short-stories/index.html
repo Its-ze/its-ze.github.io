@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore short stories written by It's Z. Dive into tales of peace, introspection, and creativity that will captivate your mind.">
     <title>Short Stories - It's Z</title>
     <link rel="stylesheet" href="/styles.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
@@ -11,17 +12,18 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background-color: #000;
+            line-height: 1.8;
+            color: #f0f0f0;
+            background-color: #1a1a1a;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(135deg, #333, #111);
             color: #fff;
             padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         nav ul {
@@ -32,50 +34,94 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url('https://images.unsplash.com/photo-1528747045269-390fe33c19e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            margin-bottom: 60px;
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
         }
 
         .stories-container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
         }
 
         .story-item {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #555;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .story-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
         }
 
         .story-item h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff6347;
         }
 
         .story-item p {
-            margin: 10px 0;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
 
         .story-item a {
             color: #ff6347;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .story-item a:hover {
+            color: #fff;
         }
 
         footer {
-            background: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(135deg, #111, #333);
             color: #fff;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -85,25 +131,23 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/short-stories/">Short Stories</a></li>
-                <li><a href="/about/">About Me</a></li>
+                <li><a href="/blog/index.html">Blog</a></li>
+                <li><a href="/projects/index.html">Projects</a></li>
+                <li><a href="/short-stories/index.html">Short Stories</a></li>
+                <li><a href="/about/index.html">About Me</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="stories-container">
-        <h1>Short Stories</h1>
+    <section class="hero">
+        <div class="container">
+            <h1>Short Stories</h1>
+            <p>Immerse yourself in a collection of stories that capture moments of stillness, introspection, and creativity.</p>
+        </div>
+    </section>
 
+    <section class="stories-container">
         <!-- Example Short Story Template -->
-        <!-- Note: Copy and paste this template for each new story you want to add -->
-        <!-- Steps to Add a New Story: -->
-        <!-- 1. Copy this 'story-item' div block and paste it below the last story entry. -->
-        <!-- 2. Change the <h2> tag to the title of the story. -->
-        <!-- 3. Update the 'Published on' date to the date you wrote or published the story. -->
-        <!-- 4. Add a brief description or summary of the story in the <p> tag. -->
-        <!-- 5. Update the 'Read More' link to point to the full story file in the /stories directory. -->
         <div class="story-item">
             <h2>A Quiet Evening</h2>
             <p class="date">Published on October 22, 2024</p>
@@ -124,7 +168,7 @@
 
     <footer>
         <p>© 2024 It's Z - All Rights Reserved.</p>
-        <p>Follow me on: <a href="https://github.com/Its-ze"><i class="fab fa-github"></i></a></p>
+        <p>Follow me on: <a href="https://github.com/Its-ze" aria-label="Visit my GitHub profile"><i class="fab fa-github"></i></a></p>
         <p>Contact me: <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
         <p>Discord: hydrah0#326477400626167809</p>
     </footer>
