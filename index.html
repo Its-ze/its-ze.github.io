@@ -11,15 +11,15 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background-color: #111;
+            line-height: 1.8;
+            color: #f0f0f0;
+            background-color: #1a1a1a;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.9);
+            background: linear-gradient(135deg, #333, #111);
             color: #fff;
             padding: 20px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -40,7 +40,7 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: color 0.3s ease;
         }
 
@@ -50,61 +50,72 @@
 
         .hero {
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
             background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-attachment: fixed;
             color: #fff;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.85);
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
             color: #ff6347;
         }
 
         .content-section {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-between;
+            gap: 40px;
+            justify-content: space-around;
         }
 
         .content-item {
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            flex: 1 1 calc(30% - 30px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            flex: 1 1 calc(45% - 40px);
             text-align: center;
-            border-radius: 15px;
+            border-radius: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .content-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
         }
 
         .content-item h3 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #ff6347;
+            font-size: 2rem;
+        }
+
+        .content-item p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
 
         .content-item a {
@@ -119,11 +130,11 @@
         }
 
         footer {
-            background: rgba(0, 0, 0, 0.9);
+            background: linear-gradient(135deg, #111, #333);
             color: #fff;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
     </style>
@@ -136,7 +147,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog/index.html">Blog</a></li>
                 <li><a href="/projects/index.html">Projects</a></li>
-                <li><a href="/short-stories/index.html">Short Stories</a></li>
                 <li><a href="/about/index.html">About Me</a></li>
             </ul>
         </nav>
@@ -157,6 +167,16 @@
                 <p>Discover how my transition to Linux improved productivity and efficiency.</p>
                 <a href="/blog/Blog-content.html">Read More <i class="fas fa-arrow-right"></i></a>
             </div>
+            <div class="content-item">
+                <h3>Integrating Any.do into My Workflow</h3>
+                <p>How Any.do has helped streamline my workflow, from managing client tasks to personal projects.</p>
+                <a href="/blog/Anydo-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-item">
+                <h3>Creating Blog Content: My Workflow</h3>
+                <p>My step-by-step approach to writing blog posts, from initial thoughts to the final published article.</p>
+                <a href="/blog/Blog-content.html">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
@@ -167,27 +187,6 @@
                 <h3>Creating This Website in GitHub Pages</h3>
                 <p>A journey into building this very website from scratch using GitHub Pages, covering the challenges, tools, and experiences along the way.</p>
                 <a href="/projects/website-creation.html">View Project <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Learning Git</h3>
-                <p>Exploring version control with Git, how it has helped me manage my code, and my experiences along the way.</p>
-                <a href="/projects/git-learning.html">View Project <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Personal Website Redesign</h3>
-                <p>A complete overhaul of my personal website, focusing on accessibility and aesthetics.</p>
-                <a href="/projects/website-redesign.html">View Project <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <h2 class="section-title">Short Stories</h2>
-        <div class="content-section">
-            <div class="content-item">
-                <h3>A Quiet Evening</h3>
-                <p>A reflection on a peaceful night spent under the stars, capturing the beauty of stillness.</p>
-                <a href="/short-stories/quiet-evening.html">Read Story <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
