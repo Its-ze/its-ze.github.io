@@ -16,11 +16,31 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">It's Z</a>
+                <ul class="nav-links">
+                    <li><a href="/about/index.html">About</a></li>
+                    <li><a href="/blog/index.html">Blog</a></li>
+                    <li><a href="/projects/index.html">Projects</a></li>
+                    <li><a href="/short-stories/index.html">Short Stories</a></li>
+                    <li><a href="#footer-placeholder">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <div id="header-hero-placeholder"></div>
     <script>
         // Load header and hero section dynamically from a shared file
         fetch('/assets/header-hero.html')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('header-hero-placeholder').innerHTML = data;
             })
@@ -66,7 +86,12 @@
     <script>
         // Load footer dynamically from contact.html
         fetch('/assets/contact.html')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             })
