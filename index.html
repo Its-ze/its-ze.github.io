@@ -1,46 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support documentation.
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It's Z</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
-</head>
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+name: Deploy Jekyll site to Pages
 
-<body>
-    <header>
-        <h1>Welcome to It's Z</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/stories/">Short Stories</a></li>
-                <li><a href="/about/">About Me</a></li>
-            </ul>
-        </nav>
-    </header>
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
 
-    <main>
-        <section id="intro">
-            <h2>About It's Z</h2>
-            <p>Welcome to my personal corner of the internet! Here, I share blog posts, creative short stories, and whatever else comes to my mind. Feel free to explore, read, and enjoy.</p>
-        </section>
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
-        <section id="latest">
-            <h2>Latest Posts</h2>
-            <p>Check out my latest blog posts and stories:</p>
-            <ul>
-                <!-- Manually update this list or consider automating it if using Jekyll -->
-                <li><a href="/blog/post1.html">How Linux Changed My Workflow</a></li>
-                <li><a href="/stories/story1.html">A Quiet Evening</a></li>
-            </ul>
-        </section>
-    </main>
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-    <footer>
-        <p>© 2024 It's Z - All Rights Reserved.</p>
-    </footer>
-</body>
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
-</html>
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Create Gemfile
+        run: |
+          echo "source 'https://rubygems.org'" > Gemfile
+          echo "gem 'jekyll'" >> Gemfile
+          echo "gem 'minima'" >> Gemfile  # Adding Minima theme for Jekyll
+
+      - name: Install Dependencies
+        run: bundle install
+
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --destination "./_site" --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@v3
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
