@@ -43,6 +43,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Create Gemfile
+        run: |
+          echo "source 'https://rubygems.org'" > Gemfile
+          echo "gem 'jekyll'" >> Gemfile
+
       - name: Install Dependencies
         run: bundle install
 
@@ -67,3 +72,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+# To access your site, navigate to your repository's GitHub Pages settings.
+# If you haven't already, configure the GitHub Pages source to use GitHub Actions.
+# After deployment, your site will be accessible at:
+# https://<your-username>.github.io/<your-repository>/
+# Replace <your-username> and <your-repository> with the correct names.
