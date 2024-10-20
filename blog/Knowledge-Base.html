@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exploring Knowledge Base Solutions for My IT Business</title>
-    <link rel="stylesheet" href="assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
+    <link rel="stylesheet" href="/assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <meta name="description" content="Discover the best tools and platforms for managing client information effectively in an evolving IT business landscape.">
+    <meta property="og:title" content="Exploring Knowledge Base Solutions for My IT Business">
+    <meta property="og:description" content="Discover the best tools and platforms for managing client information effectively in an evolving IT business landscape.">
+    <meta property="og:image" content="URL_TO_AN_IMAGE"> <!-- Use an image that represents your work -->
+    <meta property="og:type" content="website">
 </head>
 
 <body>
@@ -61,12 +66,16 @@
     <div id="footer-placeholder"></div>
     <script>
         // Load footer dynamically from contact.html
-        fetch('assets/contact.html')
+        fetch('/assets/contact.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             })
-            .catch(error => console.error('Error loading footer:', error));
+            .catch(error => {
+                console.error('Error loading footer:', error);
+                // Fallback for users without JavaScript
+                document.getElementById('footer-placeholder').innerHTML = '<footer><p>Contact information: contact@example.com</p></footer>';
+            });
     </script>
 </body>
 
