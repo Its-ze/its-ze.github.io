@@ -1,75 +1,156 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support documentation.
+<!DOCTYPE html>
+<html lang="en">
 
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll site to Pages
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Z - Blog & Short Stories</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+        nav ul li {
+            margin: 0 15px;
+        }
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url('https://source.unsplash.com/1600x900/?nature');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-      - name: Create Gemfile
-        run: |
-          echo "source 'https://rubygems.org'" > Gemfile
-          echo "gem 'jekyll'" >> Gemfile
-          echo "gem 'minima'" >> Gemfile  # Adding Minima theme for Jekyll
+        .about {
+            text-align: center;
+            padding: 40px 20px;
+        }
 
-      - name: Install Dependencies
-        run: bundle install
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --destination "./_site" --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
 
-      - name: Upload artifact
-        # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
+        .content-item {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 calc(33.333% - 20px);
+            text-align: center;
+        }
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        .content-item h3 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/stories/">Short Stories</a></li>
+                <li><a href="/about/">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to It's Z</h1>
+            <p>Where creativity flows freely – a collection of thoughts, stories, and everything in between.</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About It's Z</h2>
+            <p>Welcome to my personal corner of the internet! Here, I share blog posts, creative short stories, and whatever else comes to mind. Feel free to explore, read, and enjoy. This is a place to find inspiration, and dive into worlds of imagination.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Latest Posts & Stories</h2>
+        <div class="content-section">
+            <div class="content-item">
+                <h3>How Linux Changed My Workflow</h3>
+                <p>Discover how my transition to Linux improved productivity and efficiency.</p>
+                <a href="/blog/post1.html">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-item">
+                <h3>A Quiet Evening</h3>
+                <p>A reflection on a serene night, capturing the beauty of stillness.</p>
+                <a href="/stories/story1.html">Read Story <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-item">
+                <h3>Embracing Change</h3>
+                <p>Exploring the challenges and opportunities that come with life's changes.</p>
+                <a href="/blog/post2.html">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 It's Z - All Rights Reserved.</p>
+        <p>Follow me on: <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-github"></i></a></p>
+    </footer>
+</body>
+
+</html>
