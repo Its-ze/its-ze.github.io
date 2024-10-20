@@ -47,13 +47,14 @@ jobs:
         run: |
           echo "source 'https://rubygems.org'" > Gemfile
           echo "gem 'jekyll'" >> Gemfile
+          echo "gem 'minima'" >> Gemfile  # Adding Minima theme for Jekyll
 
       - name: Install Dependencies
         run: bundle install
 
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --destination "./_site" --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
@@ -72,9 +73,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-# To access your site, navigate to your repository's GitHub Pages settings.
-# If you haven't already, configure the GitHub Pages source to use GitHub Actions.
-# After deployment, your site will be accessible at:
-# https://<your-username>.github.io/<your-repository>/
-# Replace <your-username> and <your-repository> with the correct names.
