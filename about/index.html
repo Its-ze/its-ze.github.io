@@ -2,79 +2,136 @@
 <html lang="en">
 
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
     <title>About Me - It's Z</title>
-    <link rel="stylesheet" href="/assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Get to know me, my journey, and what drives my passion for technology, creativity, and sharing knowledge.">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="About Me - It's Z">
     <meta property="og:description" content="Get to know me, my journey, and what drives my passion for technology, creativity, and sharing knowledge.">
     <meta property="og:type" content="website">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha384-..." crossorigin="anonymous"> <!-- Update 'sha384-...' with the actual integrity hash -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="header-hero-placeholder"></div>
+    <!-- Header Placeholder -->
+    <div id="header-hero-placeholder">
+        <noscript>
+            <header>
+                <h1>About Me - It's Z</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog/index.html">Blog</a></li>
+                        <li><a href="/projects/index.html">Projects</a></li>
+                        <li><a href="/short-stories/index.html">Short Stories</a></li>
+                        <li><a href="/about/index.html">About Me</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </noscript>
+    </div>
+
+    <!-- Script to load header dynamically -->
     <script>
-        // Load header and hero section dynamically from a shared file
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('/assets/header-hero.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('header-hero-placeholder').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading header and hero section:', error);
-                });
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${url}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            }
+
+            // Load header
+            loadHTML('header-hero-placeholder', '/assets/header-hero.html');
         });
     </script>
 
-    <section class="about-container">
-        <h1>About Me</h1>
-        <p>My name is Z. My pronouns are they/them, and I'm currently 20 years old. I hold an Associate of Arts and an Associate of Science in Cyber and Information Security from Lorain County Community College (LCCC).</p>
-        <p>I've been using Linux for around four years, and I've been working in the IT field professionally for about two years. Linux has been a significant part of my personal and professional life, and I enjoy learning new things about technology, security, and open-source software.</p>
-        <p>My partner, S, is also part of this project and will be contributing short stories alongside me. Together, we aim to share our creative endeavors, whether it be blog posts, projects, or imaginative stories.</p>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>About Me</h1>
+                <p>Get to know me, my journey, and what drives my passion for technology, creativity, and sharing knowledge.</p>
+            </div>
+        </section>
 
-        <h3>My Interests and Hobbies</h3>
-        <p>When I'm not working or experimenting with technology, I enjoy a variety of hobbies that help me stay balanced and creative. Here are a few things that keep me busy:</p>
-        <ul>
-            <li><strong>Creative Writing</strong>: Besides my work in tech, I love creative writing. My partner and I often collaborate on short stories that explore different genres, from science fiction to fantasy.</li>
-            <li><strong>3D Printing</strong>: I enjoy tinkering with 3D printers, creating both practical items and fun models. It’s amazing to see ideas come to life in a tangible form.</li>
-            <li><strong>Landscaping</strong>: My first job was in landscaping, and it still holds a special place in my heart. Whenever I can, I spend time in my garden or help friends and family with their outdoor projects.</li>
-            <li><strong>Gaming</strong>: Video games are another way I like to relax. They allow me to explore new worlds, solve problems, and have fun between work sessions.</li>
-        </ul>
+        <!-- About Section -->
+        <section class="about-container container">
+            <h2>Welcome to My World</h2>
+            <p>My name is Z. My pronouns are they/them, and I'm currently 20 years old. I hold an Associate of Arts and an Associate of Science in Cyber and Information Security from Lorain County Community College (LCCC).</p>
+            <p>I've been using Linux for around four years, and I've been working in the IT field professionally for about two years. Linux has been a significant part of my personal and professional life, and I enjoy learning new things about technology, security, and open-source software.</p>
+            <p>My partner, S, is also part of this project and will be contributing short stories alongside me. Together, we aim to share our creative endeavors, whether it be blog posts, projects, or imaginative stories.</p>
 
-        <h3>My Professional Journey</h3>
-        <p>My journey into IT started at a young age, driven by a fascination with how things work behind the scenes. I decided to formalize my passion through studies in Cyber and Information Security at LCCC. Since then, I've been fortunate enough to work professionally in IT, gaining hands-on experience with a range of technologies and systems.</p>
-        <p>Currently, I am expanding my skill set by diving deeper into cybersecurity, Linux administration, and cloud solutions. I firmly believe in lifelong learning, and I'm excited to continue growing in this ever-evolving industry.</p>
+            <h2>My Interests and Hobbies</h2>
+            <p>When I'm not working or experimenting with technology, I enjoy a variety of hobbies that help me stay balanced and creative. Here are a few things that keep me busy:</p>
+            <ul>
+                <li><strong>Creative Writing</strong>: Besides my work in tech, I love creative writing. My partner and I often collaborate on short stories that explore different genres, from science fiction to fantasy.</li>
+                <li><strong>3D Printing</strong>: I enjoy tinkering with 3D printers, creating both practical items and fun models. It’s amazing to see ideas come to life in a tangible form.</li>
+                <li><strong>Landscaping</strong>: My first job was in landscaping, and it still holds a special place in my heart. Whenever I can, I spend time in my garden or help friends and family with their outdoor projects.</li>
+                <li><strong>Gaming</strong>: Video games are another way I like to relax. They allow me to explore new worlds, solve problems, and have fun between work sessions.</li>
+            </ul>
 
-        <h3>Why This Website?</h3>
-        <p>This website is a place for me to document my journey, share my thoughts, and connect with others who share similar passions. Whether it's a new blog post on technology, a project I've been working on, or a collaborative short story with my partner, I hope to create a space that is both informative and inspiring for anyone visiting.</p>
-    </section>
+            <h2>My Professional Journey</h2>
+            <p>My journey into IT started at a young age, driven by a fascination with how things work behind the scenes. I decided to formalize my passion through studies in Cyber and Information Security at LCCC. Since then, I've been fortunate enough to work professionally in IT, gaining hands-on experience with a range of technologies and systems.</p>
+            <p>Currently, I am expanding my skill set by diving deeper into cybersecurity, Linux administration, and cloud solutions. I firmly believe in lifelong learning, and I'm excited to continue growing in this ever-evolving industry.</p>
 
+            <h2>Why This Website?</h2>
+            <p>This website is a place for me to document my journey, share my thoughts, and connect with others who share similar passions. Whether it's a new blog post on technology, a project I've been working on, or a collaborative short story with my partner, I hope to create a space that is both informative and inspiring for anyone visiting.</p>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
+
+    <!-- Script to load footer dynamically -->
     <script>
-        // Load footer dynamically from contact.html
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('/assets/contact.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading footer:', error);
-                });
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${url}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            }
+
+            // Load footer
+            loadHTML('footer-placeholder', '/assets/contact.html');
         });
     </script>
 </body>

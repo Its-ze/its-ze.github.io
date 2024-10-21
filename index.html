@@ -3,18 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>It's Z - Home</title>
-    <link rel="stylesheet" href="assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Meta tags for SEO -->
     <meta name="description" content="Where creativity flows freely – a collection of thoughts, stories, projects, and everything in between.">
+    <!-- Open Graph meta tags -->
     <meta property="og:title" content="It's Z - Home">
     <meta property="og:description" content="Where creativity flows freely – a collection of thoughts, stories, projects, and everything in between.">
     <meta property="og:type" content="website">
 </head>
 
 <body>
+    <!-- Header -->
     <div id="header-hero-placeholder">
         <noscript>
             <header>
@@ -31,69 +38,74 @@
             </header>
         </noscript>
     </div>
+
+    <!-- Main content -->
+    <main>
+        <!-- Blog Section -->
+        <section class="container">
+            <h2 class="section-title">Explore the Blog</h2>
+            <div class="content-section">
+                <!-- Blog Post 1 -->
+                <article class="content-item">
+                    <h3>How Linux Changed My Workflow</h3>
+                    <p>Discover how my transition to Linux improved productivity and efficiency.</p>
+                    <a href="/blog/linux-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <!-- Blog Post 2 -->
+                <article class="content-item">
+                    <h3>Integrating Any.do into My Workflow</h3>
+                    <p>How Any.do has helped streamline my workflow, from managing client tasks to personal projects.</p>
+                    <a href="/blog/anydo-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+                <!-- Blog Post 3 -->
+                <article class="content-item">
+                    <h3>Creating Blog Content: My Workflow</h3>
+                    <p>My step-by-step approach to writing blog posts, from initial thoughts to the final published article.</p>
+                    <a href="/blog/blog-content-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="content-section">
+                <!-- Project 1 -->
+                <article class="content-item">
+                    <h3>Creating This Website with GitHub Pages</h3>
+                    <p>A journey into building this very website from scratch using GitHub Pages, covering the challenges, tools, and experiences along the way.</p>
+                    <a href="/projects/website-creation.html">View Project <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Load header and hero section dynamically from a shared file
-            fetch('assets/header-hero.html')
-                .then(response => response.ok ? response.text() : Promise.reject('Failed to load header'))
-                .then(data => {
-                    document.getElementById('header-hero-placeholder').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading header and hero section:', error);
-                });
-        });
-    </script>
+            // Function to load external HTML content
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${url}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            }
 
-    <section class="container">
-        <h2 class="section-title">Explore the Blog</h2>
-        <div class="content-section">
-            <div class="content-item">
-                <h3>How Linux Changed My Workflow</h3>
-                <p>Discover how my transition to Linux improved productivity and efficiency.</p>
-                <a href="/blog/linux-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Integrating Any.do into My Workflow</h3>
-                <p>How Any.do has helped streamline my workflow, from managing client tasks to personal projects.</p>
-                <a href="/blog/anydo-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="content-item">
-                <h3>Creating Blog Content: My Workflow</h3>
-                <p>My step-by-step approach to writing blog posts, from initial thoughts to the final published article.</p>
-                <a href="/blog/blog-content-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <h2 class="section-title">Recent Projects</h2>
-        <div class="content-section">
-            <div class="content-item">
-                <h3>Creating This Website in GitHub Pages</h3>
-                <p>A journey into building this very website from scratch using GitHub Pages, covering the challenges, tools, and experiences along the way.</p>
-                <a href="/projects/website-creation.html">View Project <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <div id="footer-placeholder">
-        <noscript>
-            <footer>
-                <p>&copy; 2024 It's Z. All rights reserved.</p>
-                <p>Contact me at <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
-            </footer>
-        </noscript>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load footer dynamically from contact.html
-            fetch('assets/contact.html')
-                .then(response => response.ok ? response.text() : Promise.reject('Failed to load footer'))
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading footer:', error));
+            // Load header and footer
+            loadHTML('header-hero-placeholder', 'assets/header-hero.html');
+            loadHTML('footer-placeholder', 'assets/contact.html');
         });
     </script>
 </body>

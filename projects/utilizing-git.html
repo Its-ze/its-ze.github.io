@@ -3,18 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Utilizing Git for Note-Taking and Website Management - A guide by It's Z on how to streamline note-taking and web development using Git.">
     <title>Utilizing Git for Note-Taking and Website Management - It's Z</title>
-    <link rel="stylesheet" href="assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha384-..." crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Meta tags for SEO -->
+    <meta name="description"
+          content="Learn how to streamline note-taking and web development using Git. A guide by It's Z on utilizing Git for efficient workflow management.">
+
+    <!-- Open Graph meta tags -->
     <meta property="og:title" content="Utilizing Git for Note-Taking and Website Management - It's Z">
-    <meta property="og:description" content="A guide on how to streamline note-taking and web development using Git.">
+    <meta property="og:description"
+          content="Learn how to streamline note-taking and web development using Git. A guide by It's Z on utilizing Git for efficient workflow management.">
     <meta property="og:type" content="website">
 </head>
 
 <body>
+    <!-- Header Placeholder -->
     <div id="header-hero-placeholder">
         <noscript>
             <header>
@@ -31,99 +48,119 @@
             </header>
         </noscript>
     </div>
+
+    <!-- Script to load header dynamically -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Load header and hero section dynamically from a shared file
-            fetch('assets/header-hero.html')
-                .then(response => response.ok ? response.text() : Promise.reject('Failed to load header'))
-                .then(data => {
-                    document.getElementById('header-hero-placeholder').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading header and hero section:', error);
-                });
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${url}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            }
+
+            // Load header
+            loadHTML('header-hero-placeholder', 'assets/header-hero.html');
         });
     </script>
 
-    <section class="project-container">
-        <h1>Utilizing Git for Note-Taking and Website Management</h1>
-        <p>As I continue to refine my workflow, I’ve begun leveraging Git for both note-taking and website management. Using GitHub Desktop for version control and syncing, I can ensure my notes are securely backed up and that all changes to my website are intentional and properly tracked. Here’s a step-by-step breakdown of how I set this up for my notes using Obsidian and how I manage my website with GitHub Desktop and Visual Studio Code (VS Code).</p>
-        
-        <h2>Setting Up Git for Note-Taking in Obsidian</h2>
-        <h3>Step 1: Create a Git Repository for Your Notes</h3>
-        <ul>
-            <li><strong>Create a new repository:</strong> Go to GitHub and create a new repository, such as <strong>gitnotes</strong>.</li>
-            <li><strong>Clone the repository:</strong> Open GitHub Desktop, clone the newly created repository to a local folder on your machine. This folder will hold all your notes, and Git will track changes you make.</li>
-        </ul>
-        
-        <h3>Step 2: Integrate Git with Obsidian</h3>
-        <ul>
-            <li><strong>Open Obsidian settings:</strong> Open Obsidian and navigate to Settings.</li>
-            <li><strong>Install the Obsidian Git plugin:</strong> Select Community Plugins, search for <strong>Obsidian Git</strong>, and install it.</li>
-            <li><strong>Enable the plugin:</strong> Once installed, enable the plugin to start displaying version control information directly within Obsidian.</li>
-        </ul>
-        
-        <h3>Step 3: Set Up Your Vault to Use Git</h3>
-        <ul>
-            <li><strong>Create a vault:</strong> In Obsidian, go to the bottom left corner and select <strong>Manage Vaults</strong>.</li>
-            <li><strong>Choose your Git folder:</strong> Select <strong>Create</strong> and point the vault destination to the folder where you cloned the Git repository (e.g., <strong>gitnotes</strong>).</li>
-            <li>From now on, any notes created or modified in this vault will be tracked by Git.</li>
-        </ul>
-        
-        <h3>Step 4: Test Your Setup</h3>
-        <ul>
-            <li><strong>Create a test note:</strong> Make a new note in your Obsidian vault.</li>
-            <li><strong>Check changes in GitHub Desktop:</strong> Open GitHub Desktop, and the newly created note will appear as a change.</li>
-            <li><strong>Commit your changes:</strong> Write a commit message like <em>"Added test note"</em>, then click <strong>Commit</strong>.</li>
-            <li><strong>Push to GitHub:</strong> Click <strong>Push</strong> to upload your changes to GitHub.</li>
-            <li><strong>Verify:</strong> Visit your GitHub repository online to verify that your note is visible there.</li>
-        </ul>
-        
-        <p>With this setup, your notes are now securely stored and version-controlled. You will have a full history of changes, and rolling back to previous versions is simple when needed.</p>
-        
-        <h2>Managing My Website with GitHub Desktop and VS Code</h2>
-        
-        <h3>Step 1: Clone the Website Repository</h3>
-        <ul>
-            <li><strong>Sign in to GitHub Desktop:</strong> Launch GitHub Desktop and log in to your GitHub account.</li>
-            <li><strong>Clone the repository:</strong> Select the repository for your website, then click <strong>Clone</strong> to download a local copy. This allows you to work on your website locally while Git tracks your changes.</li>
-        </ul>
-        
-        <h3>Step 2: Open the Repository in VS Code</h3>
-        <ul>
-            <li><strong>Open in VS Code:</strong> After cloning, click <strong>Open in VS Code</strong> from GitHub Desktop.</li>
-            <li><strong>Use Git features:</strong> In Visual Studio Code, you will have access to Git features such as <strong>committing</strong>, <strong>branching</strong>, and <strong>pushing</strong> changes directly.</li>
-        </ul>
-        
-        <h3>Step 3: Make and Commit Changes</h3>
-        <ul>
-            <li><strong>Edit website files:</strong> Make necessary edits to your website files using VS Code.</li>
-            <li><strong>Track your changes:</strong> Use VS Code's Git sidebar to track changes and add them to the staging area.</li>
-            <li><strong>Commit changes:</strong> Write a descriptive commit message to document the changes you made, then click <strong>Commit</strong>.</li>
-        </ul>
-        
-        <h3>Step 4: Push Changes to GitHub</h3>
-        <ul>
-            <li><strong>Return to GitHub Desktop:</strong> After committing changes in VS Code, return to GitHub Desktop.</li>
-            <li><strong>Push to GitHub:</strong> Click <strong>Push</strong> to upload your changes to the remote GitHub repository. If hosted with GitHub Pages, your changes will be reflected live on your website shortly.</li>
-        </ul>
-        
-        <h2>Why I Chose This Workflow</h2>
-        <p>By utilizing Git for both note-taking and website management, I’ve created a streamlined system that keeps everything organized, version-controlled, and easily accessible. The integration of Git with Obsidian ensures that my notes are always backed up and trackable, while GitHub Desktop and VS Code provide a smooth workflow for website updates and deployments. This setup gives me confidence, knowing that I can always roll back changes if necessary and maintain control over my work.</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <section class="project-container">
+            <h1>Utilizing Git for Note-Taking and Website Management</h1>
+            <p>As I continue to refine my workflow, I’ve begun leveraging Git for both note-taking and website management. Using GitHub Desktop for version control and syncing, I can ensure my notes are securely backed up and that all changes to my website are intentional and properly tracked.</p>
 
+            <h2>Setting Up Git for Note-Taking in Obsidian</h2>
+
+            <h3>Step 1: Create a Git Repository for Your Notes</h3>
+            <ol>
+                <li><strong>Create a new repository:</strong> Go to GitHub and create a new repository, such as <strong>gitnotes</strong>.</li>
+                <li><strong>Clone the repository:</strong> Open GitHub Desktop and clone the repository to a local folder on your machine.</li>
+            </ol>
+
+            <h3>Step 2: Integrate Git with Obsidian</h3>
+            <ol>
+                <li><strong>Install Obsidian Git plugin:</strong> In Obsidian, navigate to Settings &gt; Community Plugins, search for <strong>Obsidian Git</strong>, and install it.</li>
+                <li><strong>Enable the plugin:</strong> After installation, enable the plugin to start using Git within Obsidian.</li>
+            </ol>
+
+            <h3>Step 3: Set Up Your Vault to Use Git</h3>
+            <ol>
+                <li><strong>Create a vault:</strong> In Obsidian, click on <strong>Open folder as vault</strong> and select the folder where you cloned your Git repository.</li>
+                <li>Now, any notes you create or modify in this vault will be tracked by Git.</li>
+            </ol>
+
+            <h3>Step 4: Test Your Setup</h3>
+            <ol>
+                <li><strong>Create a test note:</strong> Add a new note in your Obsidian vault.</li>
+                <li><strong>Commit changes:</strong> Use the Obsidian Git plugin or GitHub Desktop to commit and push your changes to GitHub.</li>
+                <li><strong>Verify:</strong> Check your GitHub repository to ensure the note has been uploaded.</li>
+            </ol>
+
+            <h2>Managing My Website with GitHub Desktop and VS Code</h2>
+
+            <h3>Step 1: Clone the Website Repository</h3>
+            <ol>
+                <li><strong>Clone the repository:</strong> In GitHub Desktop, clone your website's repository to your local machine.</li>
+            </ol>
+
+            <h3>Step 2: Open the Repository in VS Code</h3>
+            <ol>
+                <li><strong>Open with VS Code:</strong> In GitHub Desktop, click <strong>Open in Visual Studio Code</strong>.</li>
+            </ol>
+
+            <h3>Step 3: Make and Commit Changes</h3>
+            <ol>
+                <li><strong>Edit files:</strong> Use VS Code to make changes to your website files.</li>
+                <li><strong>Stage changes:</strong> In VS Code's Source Control panel, stage the changes you want to commit.</li>
+                <li><strong>Commit:</strong> Write a meaningful commit message and commit your changes.</li>
+            </ol>
+
+            <h3>Step 4: Push Changes to GitHub</h3>
+            <ol>
+                <li><strong>Push to GitHub:</strong> In GitHub Desktop, click <strong>Push origin</strong> to upload your commits.</li>
+                <li>Your website will update automatically if hosted via GitHub Pages.</li>
+            </ol>
+
+            <h2>Why I Chose This Workflow</h2>
+            <p>Utilizing Git for both note-taking and website management streamlines my workflow, ensuring everything is version-controlled and easily accessible. This setup provides peace of mind, knowing that all changes are tracked and can be rolled back if necessary.</p>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Load footer dynamically from contact.html
-            fetch('assets/contact.html')
-                .then(response => response.ok ? response.text() : Promise.reject('Failed to load footer'))
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading footer:', error);
-                });
+            // Load footer
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${url}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            }
+
+            // Load footer
+            loadHTML('footer-placeholder', 'assets/contact.html');
         });
     </script>
 </body>
