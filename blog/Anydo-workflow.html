@@ -70,23 +70,25 @@
     
             // Load header
             loadHTML('header-hero-placeholder', '/assets/header-hero.html');
+            // Load footer
+            loadHTML('footer-placeholder', '/assets/contact.html');
         });
     </script>
     
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" style="background-image: url('/assets/images/anydo-hero.jpg');">
             <div class="container">
                 <h1>Integrating Any.do into My Workflow</h1>
                 <p>Learn how Any.do has transformed the way I manage my tasks, integrating seamlessly into my IT work and personal projects.</p>
+                <a href="#content" class="btn">Read the Article</a>
             </div>
         </section>
     
         <!-- Article Section -->
-        <article class="container">
-            <h1 class="section-title">Integrating Any.do into My Workflow</h1>
-    
+        <article class="container" id="content">
+            <h2>Introduction</h2>
             <p>As my side IT business and full-time job both continue to expand, managing my workload efficiently has become crucial. I've tried different task management systems, and I recently started using <strong>Any.do</strong> to streamline everything I need to keep track of—from client maintenance tasks to my personal projects. Here’s how Any.do has helped me take control of my time.</p>
     
             <h2>Why Any.do?</h2>

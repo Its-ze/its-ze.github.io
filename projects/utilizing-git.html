@@ -2,32 +2,33 @@
 <html lang="en">
 
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Utilizing Git for Note-Taking and Website Management - It's Z</title>
 
-    <!-- Main CSS file -->
-    <link rel="stylesheet" href="assets/style.css">
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+          content="Learn how to streamline note-taking and web development using Git. A guide by It's Z on utilizing Git for efficient workflow management.">
 
-    <!-- Font Awesome for icons -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Utilizing Git for Note-Taking and Website Management - It's Z">
+    <meta property="og:description"
+          content="Learn how to streamline note-taking and web development using Git. A guide by It's Z on utilizing Git for efficient workflow management.">
+    <meta property="og:type" content="article">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="/assets/style.css"> <!-- Adjusted path for consistency -->
+
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha384-..." crossorigin="anonymous">
+          integrity="sha384-..." crossorigin="anonymous"> <!-- Replace 'sha384-...' with actual integrity hash -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
           rel="stylesheet">
-
-    <!-- Meta tags for SEO -->
-    <meta name="description"
-          content="Learn how to streamline note-taking and web development using Git. A guide by It's Z on utilizing Git for efficient workflow management.">
-
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Utilizing Git for Note-Taking and Website Management - It's Z">
-    <meta property="og:description"
-          content="Learn how to streamline note-taking and web development using Git. A guide by It's Z on utilizing Git for efficient workflow management.">
-    <meta property="og:type" content="website">
 </head>
 
 <body>
@@ -69,15 +70,25 @@
             }
 
             // Load header
-            loadHTML('header-hero-placeholder', 'assets/header-hero.html');
+            loadHTML('header-hero-placeholder', '/assets/header-hero.html');
         });
     </script>
 
     <!-- Main Content -->
     <main>
-        <section class="project-container">
-            <h1>Utilizing Git for Note-Taking and Website Management</h1>
-            <p>As I continue to refine my workflow, I’ve begun leveraging Git for both note-taking and website management. Using GitHub Desktop for version control and syncing, I can ensure my notes are securely backed up and that all changes to my website are intentional and properly tracked.</p>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('/assets/images/git-hero.jpg');">
+            <div class="container">
+                <h1>Utilizing Git for Note-Taking and Website Management</h1>
+                <p>Streamline your workflow by integrating Git into your note-taking and web development processes.</p>
+                <a href="#content" class="btn">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Article Section -->
+        <article class="container" id="content">
+            <h2>Introduction</h2>
+            <p>As I continue to refine my workflow, I've begun leveraging Git for both note-taking and website management. Using GitHub Desktop for version control and syncing, I can ensure my notes are securely backed up and that all changes to my website are intentional and properly tracked.</p>
 
             <h2>Setting Up Git for Note-Taking in Obsidian</h2>
 
@@ -89,7 +100,7 @@
 
             <h3>Step 2: Integrate Git with Obsidian</h3>
             <ol>
-                <li><strong>Install Obsidian Git plugin:</strong> In Obsidian, navigate to Settings &gt; Community Plugins, search for <strong>Obsidian Git</strong>, and install it.</li>
+                <li><strong>Install Obsidian Git plugin:</strong> In Obsidian, navigate to <em>Settings &gt; Community Plugins</em>, search for <strong>Obsidian Git</strong>, and install it.</li>
                 <li><strong>Enable the plugin:</strong> After installation, enable the plugin to start using Git within Obsidian.</li>
             </ol>
 
@@ -133,7 +144,7 @@
 
             <h2>Why I Chose This Workflow</h2>
             <p>Utilizing Git for both note-taking and website management streamlines my workflow, ensuring everything is version-controlled and easily accessible. This setup provides peace of mind, knowing that all changes are tracked and can be rolled back if necessary.</p>
-        </section>
+        </article>
     </main>
 
     <!-- Footer Placeholder -->
@@ -160,7 +171,7 @@
             }
 
             // Load footer
-            loadHTML('footer-placeholder', 'assets/contact.html');
+            loadHTML('footer-placeholder', '/assets/contact.html');
         });
     </script>
 </body>

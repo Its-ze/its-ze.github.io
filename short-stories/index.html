@@ -2,16 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Short Stories - It's Z</title>
 
     <!-- Main CSS file -->
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
 
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha384-..." crossorigin="anonymous"> <!-- Update 'sha384-...' with the actual integrity hash -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -65,29 +68,40 @@
             }
 
             // Load header
-            loadHTML('header-hero-placeholder', 'assets/header-hero.html');
+            loadHTML('header-hero-placeholder', '/assets/header-hero.html');
         });
     </script>
 
     <!-- Main content -->
     <main>
-        <!-- Short Stories Section -->
-        <section class="stories-container">
-            <!-- Story Item 1 -->
-            <article class="story-item">
-                <h2>A Quiet Evening</h2>
-                <p class="date">Published on October 22, 2024</p>
-                <p>This story reflects on a peaceful, quiet evening spent under the stars. It captures the mood of stillness and introspection, offering a window into the beauty of solitude...</p>
-                <a href="/short-stories/quiet-evening.html">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Short Stories</h1>
+                <p>Explore captivating tales of peace, introspection, and creativity.</p>
+            </div>
+        </section>
 
-            <!-- Story Item 2 -->
-            <article class="story-item">
-                <h2>Title of Your Next Short Story</h2>
-                <p class="date">Published on [Date]</p>
-                <p>This is a brief introduction or summary of your next story. It should intrigue readers and give them a reason to click through to read the entire story.</p>
-                <a href="/short-stories/[link-to-full-story].html">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
+        <!-- Short Stories Section -->
+        <section class="container">
+            <h2 class="section-title">Discover Our Stories</h2>
+            <div class="content-section">
+                <!-- Story Item 1 -->
+                <article class="content-item">
+                    <h3>A Quiet Evening</h3>
+                    <p class="date">Published on October 22, 2024</p>
+                    <p>This story reflects on a peaceful, quiet evening spent under the stars. It captures the mood of stillness and introspection, offering a window into the beauty of solitude...</p>
+                    <a href="/short-stories/quiet-evening.html">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <!-- Story Item 2 -->
+                <article class="content-item">
+                    <h3>Title of Your Next Short Story</h3>
+                    <p class="date">Published on [Date]</p>
+                    <p>This is a brief introduction or summary of your next story. It should intrigue readers and give them a reason to click through to read the entire story.</p>
+                    <a href="/short-stories/your-next-story.html">Read More <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
         </section>
     </main>
 
@@ -115,7 +129,7 @@
             }
 
             // Load footer
-            loadHTML('footer-placeholder', 'assets/contact.html');
+            loadHTML('footer-placeholder', '/assets/contact.html');
         });
     </script>
 </body>

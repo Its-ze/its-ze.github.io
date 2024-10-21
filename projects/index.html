@@ -24,7 +24,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha384-..." crossorigin="anonymous">
+          integrity="sha384-..." crossorigin="anonymous"> <!-- Replace 'sha384-...' with actual integrity hash -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -50,43 +50,9 @@
         </noscript>
     </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h1>Projects</h1>
-                <p>Explore a collection of my projects ranging from web development to automation, showcasing creativity and problem-solving skills.</p>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="projects-container">
-            <!-- Project Item 1 -->
-            <article class="project-item">
-                <h2>Creating This Website in GitHub Pages</h2>
-                <p class="date">Started on: October 2024</p>
-                <p>This website was built using GitHub Pages, HTML, and CSS, with a focus on simplicity and accessibility. GitHub Pages made it easy to host and update the site with each new addition to the repository. This project also documents the steps taken to set up GitHub Pages and automate content creation, allowing for efficient updates without touching HTML code.</p>
-                <a href="/projects/website-creation.html" aria-label="View Project Details for Creating This Website in GitHub Pages">View Project Details <i class="fas fa-arrow-right"></i></a>
-            </article>
-
-            <!-- Project Item 2 -->
-            <article class="project-item">
-                <h2>Utilizing Git for Note-Taking and Website Management</h2>
-                <p class="date">Started on: October 2024</p>
-                <p>This project focuses on utilizing Git for efficient version control in note-taking and managing a personal website. GitHub Desktop was used for easy access to Git features, and Obsidian was integrated with Git for syncing and tracking changes. Additionally, Visual Studio Code was used to clone and manage the website repository, streamlining the update and version control processes.</p>
-                <a href="/projects/utilizing-git.html" aria-label="View Project Details for Utilizing Git for Note-Taking and Website Management">View Project Details <i class="fas fa-arrow-right"></i></a>
-            </article>
-        </section>
-    </main>
-
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
+    <!-- Script to load header dynamically -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Function to load external HTML content
             function loadHTML(elementId, url) {
                 fetch(url)
                     .then(response => {
@@ -103,8 +69,70 @@
                     });
             }
 
-            // Load header and footer
+            // Load header
             loadHTML('header-hero-placeholder', '/assets/header-hero.html');
+        });
+    </script>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('/assets/images/projects-hero.jpg');">
+            <div class="container">
+                <h1>Projects</h1>
+                <p>Explore a collection of my projects ranging from web development to automation, showcasing creativity and problem-solving skills.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="content-section">
+                <!-- Project Item 1 -->
+                <article class="content-item">
+                    <h3>Creating This Website with GitHub Pages</h3>
+                    <p class="date">Started on: October 2024</p>
+                    <p>This website was built using GitHub Pages, HTML, and CSS, focusing on simplicity and accessibility. It documents the steps taken to set up GitHub Pages and automate content creation, allowing for efficient updates without touching HTML code.</p>
+                    <a href="/projects/website-creation.html">View Project Details <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <!-- Project Item 2 -->
+                <article class="content-item">
+                    <h3>Utilizing Git for Note-Taking and Website Management</h3>
+                    <p class="date">Started on: October 2024</p>
+                    <p>This project focuses on utilizing Git for efficient version control in note-taking and managing a personal website. It involves integrating Git with tools like Obsidian and Visual Studio Code to streamline workflows.</p>
+                    <a href="/projects/utilizing-git.html">View Project Details <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <!-- Additional Project Items (Optional) -->
+                <!-- You can add more projects here following the same structure -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script to load footer dynamically -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${url}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            }
+
+            // Load footer
             loadHTML('footer-placeholder', '/assets/contact.html');
         });
     </script>

@@ -24,10 +24,10 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha384-..." crossorigin="anonymous"> <!-- Update 'sha384-...' with the actual integrity hash -->
+          integrity="sha384-xxxxxxxx" crossorigin="anonymous"> <!-- Replace 'sha384-xxxxxxxx' with the actual integrity hash -->
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -68,42 +68,58 @@
                     });
             }
 
-            // Load header
+            // Load header and footer
             loadHTML('header-hero-placeholder', '/assets/header-hero.html');
+            loadHTML('footer-placeholder', '/assets/contact.html');
         });
     </script>
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Hero Section with Personal Touch -->
+        <section class="hero" style="background-image: url('/assets/images/about-hero.jpg');">
             <div class="container">
-                <h1>About Me</h1>
-                <p>Get to know me, my journey, and what drives my passion for technology, creativity, and sharing knowledge.</p>
+                <img src="/assets/images/profile-picture.jpg" alt="Picture of Z" class="profile-picture">
+                <h1>Hello, I'm Z!</h1>
+                <p>Welcome to my little corner of the internet.</p>
             </div>
         </section>
 
         <!-- About Section -->
         <section class="about-container container">
-            <h2>Welcome to My World</h2>
-            <p>My name is Z. My pronouns are they/them, and I'm currently 20 years old. I hold an Associate of Arts and an Associate of Science in Cyber and Information Security from Lorain County Community College (LCCC).</p>
-            <p>I've been using Linux for around four years, and I've been working in the IT field professionally for about two years. Linux has been a significant part of my personal and professional life, and I enjoy learning new things about technology, security, and open-source software.</p>
-            <p>My partner, S, is also part of this project and will be contributing short stories alongside me. Together, we aim to share our creative endeavors, whether it be blog posts, projects, or imaginative stories.</p>
+            <h2>Welcome to My World <i class="fas fa-heart"></i></h2>
+            <p>My name is Z, and my pronouns are they/them. I'm a 20-year-old tech enthusiast with a passion for all things creative and innovative.</p>
+            <p>I hold an Associate of Arts and an Associate of Science in Cyber and Information Security from Lorain County Community College (LCCC).</p>
 
-            <h2>My Interests and Hobbies</h2>
-            <p>When I'm not working or experimenting with technology, I enjoy a variety of hobbies that help me stay balanced and creative. Here are a few things that keep me busy:</p>
-            <ul>
-                <li><strong>Creative Writing</strong>: Besides my work in tech, I love creative writing. My partner and I often collaborate on short stories that explore different genres, from science fiction to fantasy.</li>
-                <li><strong>3D Printing</strong>: I enjoy tinkering with 3D printers, creating both practical items and fun models. It’s amazing to see ideas come to life in a tangible form.</li>
-                <li><strong>Landscaping</strong>: My first job was in landscaping, and it still holds a special place in my heart. Whenever I can, I spend time in my garden or help friends and family with their outdoor projects.</li>
-                <li><strong>Gaming</strong>: Video games are another way I like to relax. They allow me to explore new worlds, solve problems, and have fun between work sessions.</li>
-            </ul>
+            <h2>My Interests and Hobbies <i class="fas fa-star"></i></h2>
+            <div class="hobbies">
+                <div class="hobby-item">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>Creative Writing</h3>
+                    <p>Collaborating on short stories with my partner S, exploring genres from sci-fi to fantasy.</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-print"></i>
+                    <h3>3D Printing</h3>
+                    <p>Bringing ideas to life by creating fun models and practical items.</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Landscaping</h3>
+                    <p>Spending time outdoors gardening and helping with landscaping projects.</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming</h3>
+                    <p>Exploring new worlds and solving problems through video games.</p>
+                </div>
+            </div>
 
-            <h2>My Professional Journey</h2>
-            <p>My journey into IT started at a young age, driven by a fascination with how things work behind the scenes. I decided to formalize my passion through studies in Cyber and Information Security at LCCC. Since then, I've been fortunate enough to work professionally in IT, gaining hands-on experience with a range of technologies and systems.</p>
-            <p>Currently, I am expanding my skill set by diving deeper into cybersecurity, Linux administration, and cloud solutions. I firmly believe in lifelong learning, and I'm excited to continue growing in this ever-evolving industry.</p>
+            <h2>My Professional Journey <i class="fas fa-laptop-code"></i></h2>
+            <p>I've been using Linux for around four years and working professionally in IT for about two years. My journey into IT started at a young age, driven by a fascination with how things work behind the scenes.</p>
+            <p>Currently, I'm expanding my skill set by diving deeper into cybersecurity, Linux administration, and cloud solutions. I believe in lifelong learning and am excited to continue growing in this ever-evolving industry.</p>
 
-            <h2>Why This Website?</h2>
+            <h2>Why This Website? <i class="fas fa-globe"></i></h2>
             <p>This website is a place for me to document my journey, share my thoughts, and connect with others who share similar passions. Whether it's a new blog post on technology, a project I've been working on, or a collaborative short story with my partner, I hope to create a space that is both informative and inspiring for anyone visiting.</p>
         </section>
     </main>
@@ -111,28 +127,9 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Script to load footer dynamically -->
+    <!-- Scripts -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function loadHTML(elementId, url) {
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to load ${url}`);
-                        }
-                        return response.text();
-                    })
-                    .then(data => {
-                        document.getElementById(elementId).innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error(`Error loading ${url}:`, error);
-                    });
-            }
-
-            // Load footer
-            loadHTML('footer-placeholder', '/assets/contact.html');
-        });
+        // Scripts are included above in the header loading section
     </script>
 </body>
 

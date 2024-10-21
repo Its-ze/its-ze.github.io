@@ -2,27 +2,30 @@
 <html lang="en">
 
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating This Website in GitHub Pages - It's Z</title>
+    <title>Creating This Website Using GitHub Pages - It's Z</title>
 
-    <!-- Main CSS file -->
-    <link rel="stylesheet" href="assets/style.css">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn how I built and hosted my personal website with GitHub Pages, combining simplicity with powerful tools for effective web presence.">
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Creating This Website Using GitHub Pages - It's Z">
+    <meta property="og:description" content="Learn how I built and hosted my personal website with GitHub Pages, combining simplicity with powerful tools for effective web presence.">
+    <meta property="og:type" content="article">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="/assets/style.css"> <!-- Adjusted path for consistency -->
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha384-..." crossorigin="anonymous"> <!-- Replace 'sha384-...' with actual integrity hash -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="Learn how I built and hosted my personal website with GitHub Pages, combining simplicity with powerful tools for effective web presence.">
-
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Creating This Website in GitHub Pages - It's Z">
-    <meta property="og:description" content="Learn how I built and hosted my personal website with GitHub Pages, combining simplicity with powerful tools for effective web presence.">
-    <meta property="og:type" content="website">
 </head>
 
 <body>
@@ -30,7 +33,7 @@
     <div id="header-hero-placeholder">
         <noscript>
             <header>
-                <h1>Creating This Website in GitHub Pages - It's Z</h1>
+                <h1>Creating This Website Using GitHub Pages - It's Z</h1>
                 <nav>
                     <ul>
                         <li><a href="/">Home</a></li>
@@ -64,33 +67,55 @@
             }
 
             // Load header
-            loadHTML('header-hero-placeholder', 'assets/header-hero.html');
+            loadHTML('header-hero-placeholder', '/assets/header-hero.html');
         });
     </script>
 
     <!-- Main Content -->
     <main>
-        <section class="project-container">
-            <h1>Creating This Website Using GitHub Pages</h1>
-            <p>This project outlines the process I used to create and host this website using GitHub Pages. By leveraging the capabilities of GitHub Pages, I was able to create a simple, easy-to-update personal website without the need for expensive hosting solutions or complex server configurations.</p>
-            <p>To create this website, I used HTML and CSS to build each page, and then hosted the site using GitHub Pages, a free static site hosting service provided by GitHub. The setup process involved configuring a publishing source for the repository to make the site publicly accessible. The site is updated automatically whenever I push new content or changes to the GitHub repository.</p>
-            <p>GitHub Pages makes it easy for me to maintain and update my website using Git's version control features. With every update, the site is rebuilt and redeployed seamlessly, ensuring that any new projects, blog posts, or stories I add are instantly visible to the visitors.</p>
-            <p>Below is a quick list of steps I followed to create this website:</p>
-            <ul>
-                <li>Set up a GitHub repository to store all website files.</li>
-                <li>Created the website layout using HTML and CSS.</li>
-                <li>Configured GitHub Pages in the repository settings to publish the website.</li>
-                <li>Used Git to commit and push changes, which automatically updated the live site.</li>
-            </ul>
-            <p>I also added a few other tools and techniques to enhance the functionality of the site:</p>
-            <ul>
-                <li>Used <strong>Font Awesome</strong> to add icons and make navigation more intuitive.</li>
-                <li>Integrated <strong>Google Fonts</strong> for better typography.</li>
-                <li>Applied <strong>responsive design techniques</strong> to ensure the site looks great on all devices, from desktops to smartphones.</li>
-            </ul>
-            <p>For detailed steps on how to set up your own GitHub Pages site, you can refer to the official GitHub documentation:</p>
-            <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site" class="link-button">GitHub Pages Setup Guide</a>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('/assets/images/project-hero.jpg');">
+            <div class="container">
+                <h1>Creating This Website Using GitHub Pages</h1>
+                <p>Learn how I built and hosted my personal website with GitHub Pages, combining simplicity with powerful tools for an effective web presence.</p>
+                <a href="#content" class="btn">Explore the Project</a>
+            </div>
         </section>
+
+        <!-- Article Section -->
+        <article class="container" id="content">
+            <h2>Introduction</h2>
+            <p>This project outlines the process I used to create and host this website using GitHub Pages. By leveraging GitHub Pages, I was able to create a simple, easy-to-update personal website without the need for expensive hosting solutions or complex server configurations.</p>
+
+            <h2>Getting Started</h2>
+            <p>To create this website, I used HTML and CSS to build each page and hosted the site using GitHub Pages, a free static site hosting service provided by GitHub. The setup process involved configuring a publishing source for the repository to make the site publicly accessible. The site updates automatically whenever I push new content or changes to the GitHub repository.</p>
+
+            <h2>Why GitHub Pages?</h2>
+            <p>GitHub Pages makes it easy to maintain and update my website using Git's version control features. With every update, the site is rebuilt and redeployed seamlessly, ensuring that any new projects, blog posts, or stories I add are instantly visible to visitors.</p>
+
+            <h2>Steps I Followed</h2>
+            <ol>
+                <li><strong>Set up a GitHub repository</strong> to store all website files.</li>
+                <li><strong>Created the website layout</strong> using HTML and CSS.</li>
+                <li><strong>Configured GitHub Pages</strong> in the repository settings to publish the website.</li>
+                <li><strong>Used Git</strong> to commit and push changes, which automatically updated the live site.</li>
+            </ol>
+
+            <h2>Enhancements and Tools</h2>
+            <p>To enhance the functionality and aesthetics of the site, I incorporated several tools and techniques:</p>
+            <ul>
+                <li><strong>Font Awesome:</strong> Added icons to make navigation more intuitive.</li>
+                <li><strong>Google Fonts:</strong> Improved typography with custom fonts.</li>
+                <li><strong>Responsive Design:</strong> Applied techniques to ensure the site looks great on all devices, from desktops to smartphones.</li>
+                <li><strong>Dynamic Content Loading:</strong> Used JavaScript to load common elements like headers and footers dynamically, reducing redundancy and easing maintenance.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Creating a personal website with GitHub Pages is a straightforward process that offers a lot of flexibility and power. It’s an excellent choice for developers and non-developers alike who want to establish an online presence without the overhead of traditional hosting.</p>
+
+            <p>For detailed steps on how to set up your own GitHub Pages site, you can refer to the official GitHub documentation:</p>
+            <p><a href="https://docs.github.com/en/pages/getting-started-with-github-pages" class="btn">GitHub Pages Setup Guide</a></p>
+        </article>
     </main>
 
     <!-- Footer Placeholder -->
@@ -99,7 +124,6 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Load footer
             function loadHTML(elementId, url) {
                 fetch(url)
                     .then(response => {
@@ -117,7 +141,7 @@
             }
 
             // Load footer
-            loadHTML('footer-placeholder', 'assets/contact.html');
+            loadHTML('footer-placeholder', '/assets/contact.html');
         });
     </script>
 </body>
