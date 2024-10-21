@@ -4,68 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short Stories - It's Z</title>
-    <link rel="stylesheet" href="/assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
+    <title>It's Z - Home</title>
+    <link rel="stylesheet" href="assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
-    <meta name="description" content="Explore short stories written by It's Z. Dive into tales of peace, introspection, and creativity that will captivate your mind.">
-    <meta property="og:title" content="Short Stories - It's Z">
-    <meta property="og:description" content="Explore short stories written by It's Z. Dive into tales of peace, introspection, and creativity that will captivate your mind.">
+    <meta name="description" content="Where creativity flows freely – a collection of thoughts, stories, projects, and everything in between.">
+    <meta property="og:title" content="It's Z - Home">
+    <meta property="og:description" content="Where creativity flows freely – a collection of thoughts, stories, projects, and everything in between.">
     <meta property="og:type" content="website">
 </head>
 
 <body>
-    <div id="header-hero-placeholder"></div>
+    <div id="header-hero-placeholder">
+        <noscript>
+            <header>
+                <h1>It's Z - Home</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog/index.html">Blog</a></li>
+                        <li><a href="/projects/index.html">Projects</a></li>
+                        <li><a href="/short-stories/index.html">Short Stories</a></li>
+                        <li><a href="/about/index.html">About Me</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </noscript>
+    </div>
     <script>
-        // Load header and hero section dynamically from a shared file
-        fetch('/assets/header-hero.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-hero-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading header and hero section:', error);
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load header and hero section dynamically from a shared file
+            fetch('assets/header-hero.html')
+                .then(response => response.ok ? response.text() : Promise.reject('Failed to load header'))
+                .then(data => {
+                    document.getElementById('header-hero-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading header and hero section:', error);
+                });
+        });
     </script>
 
-    <section class="stories-container">
-        <!-- Example Short Story Template -->
-        <div class="story-item">
-            <h2>A Quiet Evening</h2>
-            <p class="date">Published on October 22, 2024</p>
-            <p>This story reflects on a peaceful, quiet evening spent under the stars. It captures the mood of stillness and introspection, offering a window into the beauty of solitude...</p>
-            <a href="/short-stories/quiet-evening.html">Read More <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <!-- Placeholder for Future Short Stories -->
-        <div class="story-item">
-            <h2>Title of Your Next Short Story</h2>
-            <p class="date">Published on [Date]</p>
-            <p>This is a brief introduction or summary of your next story. It should intrigue readers and give them a reason to click through to read the entire story.</p>
-            <a href="/short-stories/[link-to-full-story].html">Read More <i class="fas fa-arrow-right"></i></a>
+    <section class="container">
+        <h2 class="section-title">Explore the Blog</h2>
+        <div class="content-section">
+            <div class="content-item">
+                <h3>How Linux Changed My Workflow</h3>
+                <p>Discover how my transition to Linux improved productivity and efficiency.</p>
+                <a href="/blog/linux-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-item">
+                <h3>Integrating Any.do into My Workflow</h3>
+                <p>How Any.do has helped streamline my workflow, from managing client tasks to personal projects.</p>
+                <a href="/blog/anydo-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-item">
+                <h3>Creating Blog Content: My Workflow</h3>
+                <p>My step-by-step approach to writing blog posts, from initial thoughts to the final published article.</p>
+                <a href="/blog/blog-content-workflow.html">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section Included Dynamically -->
-    <div id="footer-placeholder"></div>
+    <section class="container">
+        <h2 class="section-title">Recent Projects</h2>
+        <div class="content-section">
+            <div class="content-item">
+                <h3>Creating This Website in GitHub Pages</h3>
+                <p>A journey into building this very website from scratch using GitHub Pages, covering the challenges, tools, and experiences along the way.</p>
+                <a href="/projects/website-creation.html">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder">
+        <noscript>
+            <footer>
+                <p>&copy; 2024 It's Z. All rights reserved.</p>
+                <p>Contact me at <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
+            </footer>
+        </noscript>
+    </div>
     <script>
-        // Load footer dynamically from contact.html
-        fetch('/assets/contact.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load footer dynamically from contact.html
+            fetch('assets/contact.html')
+                .then(response => response.ok ? response.text() : Promise.reject('Failed to load footer'))
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
     </script>
 </body>
 

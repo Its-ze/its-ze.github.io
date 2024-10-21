@@ -18,14 +18,16 @@
     <div id="header-hero-placeholder"></div>
     <script>
         // Load header and hero section dynamically from a shared file
-        fetch('/assets/header-hero.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-hero-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading header and hero section:', error);
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/assets/header-hero.html')
+                .then(response => response.ok ? response.text() : Promise.reject('Failed to load header'))
+                .then(data => {
+                    document.getElementById('header-hero-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading header and hero section:', error);
+                });
+        });
     </script>
 
     <section class="hero">
@@ -56,20 +58,19 @@
         </div>
     </section>
 
-    <!-- Footer Section Included Dynamically -->
     <div id="footer-placeholder"></div>
     <script>
         // Load footer dynamically from contact.html
-        fetch('/assets/contact.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading footer:', error);
-                // Fallback for users without JavaScript
-                document.getElementById('footer-placeholder').innerHTML = '<footer><p>Contact information: contact@example.com</p></footer>';
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/assets/contact.html')
+                .then(response => response.ok ? response.text() : Promise.reject('Failed to load footer'))
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+        });
     </script>
 </body>
 

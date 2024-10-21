@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore short stories written by It's Z. Dive into tales of peace, introspection, and creativity that will captivate your mind.">
     <title>Short Stories - It's Z</title>
-    <link rel="stylesheet" href="/assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
+    <link rel="stylesheet" href="assets/style.css"> <!-- Link to your main CSS file for consistent styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
     <meta property="og:title" content="Short Stories - It's Z">
@@ -15,17 +15,34 @@
 </head>
 
 <body>
-    <div id="header-hero-placeholder"></div>
+    <div id="header-hero-placeholder">
+        <noscript>
+            <header>
+                <h1>Short Stories - It's Z</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog/index.html">Blog</a></li>
+                        <li><a href="/projects/index.html">Projects</a></li>
+                        <li><a href="/short-stories/index.html">Short Stories</a></li>
+                        <li><a href="/about/index.html">About Me</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </noscript>
+    </div>
     <script>
-        // Load header and hero section dynamically from a shared file
-        fetch('/assets/header-hero.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-hero-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading header and hero section:', error);
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load header and hero section dynamically from a shared file
+            fetch('assets/header-hero.html')
+                .then(response => response.ok ? response.text() : Promise.reject('Failed to load header'))
+                .then(data => {
+                    document.getElementById('header-hero-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading header and hero section:', error);
+                });
+        });
     </script>
 
     <section class="stories-container">
@@ -46,20 +63,26 @@
         </div>
     </section>
 
-    <!-- Footer Section Included Dynamically -->
-    <div id="footer-placeholder"></div>
+    <div id="footer-placeholder">
+        <noscript>
+            <footer>
+                <p>&copy; 2024 It's Z. All rights reserved.</p>
+                <p>Contact me at <a href="mailto:z.skeens@itsolutions.digital">z.skeens@itsolutions.digital</a></p>
+            </footer>
+        </noscript>
+    </div>
     <script>
-        // Load footer dynamically from contact.html
-        fetch('/assets/contact.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading footer:', error);
-                // Fallback for users without JavaScript
-                document.getElementById('footer-placeholder').innerHTML = '<footer><p>Contact information: contact@example.com</p></footer>';
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load footer dynamically from contact.html
+            fetch('assets/contact.html')
+                .then(response => response.ok ? response.text() : Promise.reject('Failed to load footer'))
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error));
+                });
+        });
     </script>
 </body>
 

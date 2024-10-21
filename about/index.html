@@ -18,19 +18,21 @@
     <div id="header-hero-placeholder"></div>
     <script>
         // Load header and hero section dynamically from a shared file
-        fetch('/assets/header-hero.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-hero-placeholder').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error loading header and hero section:', error);
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/assets/header-hero.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('header-hero-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading header and hero section:', error);
+                });
+        });
     </script>
 
     <section class="about-container">
@@ -56,21 +58,24 @@
         <p>This website is a place for me to document my journey, share my thoughts, and connect with others who share similar passions. Whether it's a new blog post on technology, a project I've been working on, or a collaborative short story with my partner, I hope to create a space that is both informative and inspiring for anyone visiting.</p>
     </section>
 
-    <!-- Footer Section Included Dynamically -->
     <div id="footer-placeholder"></div>
     <script>
         // Load footer dynamically from contact.html
-        fetch('/assets/contact.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/assets/contact.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+        });
     </script>
 </body>
 
