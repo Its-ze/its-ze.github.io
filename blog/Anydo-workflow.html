@@ -24,7 +24,8 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha384-..." crossorigin="anonymous"> <!-- Update 'sha384-...' with the actual integrity hash -->
+          integrity="sha512-pw8Q+ua0KtM9V+QvNHZ1Fh0v5BZNwH+cuwxG6XZXpH1Nn5q5KNt5Kg+l6H8ZX1t+OdcQmcd9zxQjJ1B/PGMk+A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -48,32 +49,6 @@
             </header>
         </noscript>
     </div>
-    
-    <!-- Script to load header dynamically -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function loadHTML(elementId, url) {
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to load ${url}`);
-                        }
-                        return response.text();
-                    })
-                    .then(data => {
-                        document.getElementById(elementId).innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error(`Error loading ${url}:`, error);
-                    });
-            }
-    
-            // Load header
-            loadHTML('header-hero-placeholder', '/assets/header-hero.html');
-            // Load footer
-            loadHTML('footer-placeholder', '/assets/contact.html');
-        });
-    </script>
     
     <!-- Main Content -->
     <main>
@@ -99,53 +74,4 @@
             <h2>Breaking Down My Workflow</h2>
             <p>My workflow relies heavily on <strong>task lists and schedules</strong>, and Any.do makes creating these lists intuitive. I’ve set up separate task categories for each of my core focuses: client work, content creation, personal development, and administrative tasks.</p>
     
-            <p>With Any.do’s calendar integration, all my tasks are visible alongside my other calendar events, which prevents scheduling conflicts. I’ve even enabled <strong>notifications</strong> across all devices so that I'm always aware of upcoming tasks—whether I’m working on my Linux laptop, a Windows workstation, or checking my phone.</p>
-    
-            <h2>Leveraging Any.do’s ChatGPT Integration</h2>
-            <p>One of the unexpected features that ended up being highly beneficial is Any.do’s <strong>ChatGPT integration</strong>. This feature allows me to add tasks or brainstorm ideas by having a natural conversation. It’s perfect for when I’m feeling overwhelmed and need to organize my thoughts into actionable steps. It has also helped me solve a significant hurdle I had with traditional to-do lists—they always seemed too rigid. Now, I can offload my thoughts, and the integration converts them into organized action items.</p>
-    
-            <h2>Accessibility and Notifications</h2>
-            <p>Any.do’s cross-platform accessibility is another feature I appreciate. Whether I’m working from my Linux laptop, accessing tasks on a Windows desktop, or managing my schedule from my phone, Any.do keeps everything consistent. Notifications have also been crucial to keeping me on track, ensuring I don’t miss important deadlines or meetings.</p>
-    
-            <h2>The Benefits So Far</h2>
-            <p>Since integrating <strong>Any.do</strong> into my workflow, I’ve experienced notable benefits, such as:</p>
-            <ul>
-                <li><strong>Greater Organization</strong>: Tasks are grouped logically, and calendar integration means I have a clearer view of upcoming deadlines.</li>
-                <li><strong>Time Management</strong>: Natural language task entry and synced notifications have significantly cut down on missed deadlines.</li>
-                <li><strong>Increased Flexibility</strong>: The app’s cross-platform accessibility ensures that I can add or review tasks anytime, anywhere.</li>
-            </ul>
-    
-            <h2>Conclusion</h2>
-            <p>Adding Any.do to my workflow has simplified my ability to manage tasks across multiple projects and keep my work and personal life in balance. The combination of <strong>natural language processing</strong>, <strong>cross-platform accessibility</strong>, and <strong>integration with calendar systems</strong> has streamlined my planning process, saving me time and reducing my stress.</p>
-        </article>
-    </main>
-    
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
-    
-    <!-- Script to load footer dynamically -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function loadHTML(elementId, url) {
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to load ${url}`);
-                        }
-                        return response.text();
-                    })
-                    .then(data => {
-                        document.getElementById(elementId).innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error(`Error loading ${url}:`, error);
-                    });
-            }
-    
-            // Load footer
-            loadHTML('footer-placeholder', '/assets/contact.html');
-        });
-    </script>
-</body>
-
-</html>
+            <p>With Any.do’s calendar integration, all my tasks are visible alongside my other calendar events, which prevents scheduling conflicts. I’ve even enabled <strong>notifications</strong> across all devic

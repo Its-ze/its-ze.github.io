@@ -24,7 +24,8 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha384-xxxxxxxx" crossorigin="anonymous"> <!-- Replace 'sha384-xxxxxxxx' with the actual integrity hash -->
+          integrity="sha512-pw8Q+ua0KtM9V+QvNHZ1Fh0v5BZNwH+cuwxG6XZXpH1Nn5q5KNt5Kg+l6H8ZX1t+OdcQmcd9zxQjJ1B/PGMk+A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -48,30 +49,6 @@
             </header>
         </noscript>
     </div>
-
-    <!-- Script to load header and footer dynamically -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function loadHTML(elementId, url) {
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to load ${url}`);
-                        }
-                        return response.text();
-                    })
-                    .then(data => {
-                        document.getElementById(elementId).innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error(`Error loading ${url}:`, error);
-                    });
-        });
-
-        // Load header and footer
-        loadHTML('header-hero-placeholder', '/assets/header-hero.html');
-        loadHTML('footer-placeholder', '/assets/contact.html');
-    </script>
 
     <!-- Main Content -->
     <main>
@@ -112,8 +89,31 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Scripts -->
-    <!-- The scripts are included above -->
+    <!-- Combined Scripts to Load Header and Footer Dynamically -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to load external HTML content
+            function loadHTML(elementId, url) {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load ${url}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(elementId).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            }
+
+            // Load header and footer
+            loadHTML('header-hero-placeholder', '/assets/header-hero.html');
+            loadHTML('footer-placeholder', '/assets/contact.html');
+        });
+    </script>
 </body>
 
 </html>

@@ -1,34 +1,90 @@
-/* Global Styles */
+/* =====================================================
+   CSS Stylesheet for It's Z Website
+   ===================================================== */
+
+/* =======================
+   1. Root Variables
+   ======================= */
+   :root {
+    /* Color Palette */
+    --primary-color: #ff6347; /* Tomato */
+    --secondary-color: #ff4500; /* OrangeRed */
+    --accent-color: #ff7f50; /* Coral */
+    --background-color: #1a1a1a; /* Dark Background */
+    --text-color: #ffffff; /* White Text */
+    --secondary-text-color: #cccccc; /* Light Gray Text */
+    --light-pink: #fff5f7; /* Light Pink for About Section */
+    --hobby-background: #ffe4e1; /* Misty Rose for Hobbies */
+    --card-background: rgba(255, 255, 255, 0.05); /* Semi-transparent Card Background */
+
+    /* Font Families */
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Pacifico', cursive;
+
+    /* Spacing */
+    --container-width: 90%;
+    --max-container-width: 1200px;
+    --section-padding: 60px 20px;
+    --hero-padding: 150px 20px 100px;
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+
+    /* Shadows */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* =======================
+   2. Global Styles
+   ======================= */
+
+/* Box Sizing and Reset */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a1a; /* Dark background */
-    color: #fff;
-    line-height: 1.6;
+    padding: 0;
 }
 
+/* Body Styling */
+body {
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Link Styling */
 a {
-    color: #ff6347;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color var(--transition-speed) ease;
 }
 
 a:hover {
-    color: #ff4500;
+    color: var(--secondary-color);
 }
 
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
     font-weight: 700;
+    margin-top: 0;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+h3 {
+    color: var(--accent-color);
 }
 
 p {
     margin-bottom: 1rem;
+    color: var(--secondary-text-color);
 }
 
 ul, ol {
@@ -40,27 +96,73 @@ li {
     margin-bottom: 0.5rem;
 }
 
+strong {
+    color: var(--text-color);
+}
+
+/* Container */
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: var(--container-width);
+    max-width: var(--max-container-width);
     margin: 0 auto;
 }
 
+/* Section Titles */
 .section-title {
     font-size: 2.5rem;
     margin-top: 60px;
     text-align: center;
-    color: #ff6347;
+    color: var(--primary-color);
 }
 
-/* Hero Section */
+/* =======================
+   3. Header Styles
+   ======================= */
+header {
+    background-color: #222;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* =======================
+   4. Hero Section
+   ======================= */
 .hero {
     background-size: cover;
     background-position: center;
     position: relative;
-    color: #fff;
+    color: var(--text-color);
     text-align: center;
-    padding: 150px 20px 100px;
+    padding: var(--hero-padding);
 }
 
 .hero::after {
@@ -79,9 +181,9 @@ li {
 }
 
 .hero h1 {
-    font-family: 'Pacifico', cursive;
+    font-family: var(--font-secondary);
     font-size: 4rem;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .hero p {
@@ -89,46 +191,59 @@ li {
     margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
-    .hero h1 {
-        font-size: 4rem;
-    }
-
-    .hero p {
-        font-size: 1.5rem;
-    }
+.hero .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    transition: background-color var(--transition-speed) ease;
+    cursor: pointer;
 }
 
-/* Profile Picture */
+.hero .btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* =======================
+   5. Profile Picture
+   ======================= */
 .profile-picture {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 5px solid var(--text-color);
     object-fit: cover;
     margin-top: -100px;
-    background-color: #fff;
+    background-color: var(--text-color);
 }
 
-/* Buttons */
+/* =======================
+   6. Buttons
+   ======================= */
 .btn {
     display: inline-block;
     padding: 15px 30px;
     font-size: 1rem;
-    background-color: #ff6347;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
     border: none;
     border-radius: 25px;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #ff4500;
+    background-color: var(--secondary-color);
 }
 
-/* Content Sections */
+/* =======================
+   7. Content Sections
+   ======================= */
 .content-section {
     display: flex;
     flex-wrap: wrap;
@@ -138,24 +253,32 @@ li {
 }
 
 .content-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-background);
     padding: 30px;
     flex: 1 1 calc(30% - 40px);
     max-width: calc(30% - 40px);
     text-align: left;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .content-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--hover-shadow);
+}
+
+.content-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .content-item h3 {
     margin-bottom: 15px;
     font-size: 1.8rem;
-    color: #ff6347;
+    color: var(--primary-color);
 }
 
 .content-item .date {
@@ -167,19 +290,32 @@ li {
 .content-item p {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: #ccc;
+    color: var(--secondary-text-color);
 }
 
 .content-item a {
-    color: #ff6347;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
+    transition: color var(--transition-speed) ease;
 }
 
 .content-item a:hover {
-    color: #ff4500;
+    color: var(--secondary-color);
 }
 
+.read-more-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+}
+
+.read-more-btn:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Layout for Content Items */
 @media (max-width: 1024px) {
     .content-item {
         flex: 1 1 calc(45% - 40px);
@@ -194,7 +330,9 @@ li {
     }
 }
 
-/* Article Styling */
+/* =======================
+   8. Article Styling
+   ======================= */
 article {
     margin: 60px auto;
     max-width: 800px;
@@ -204,20 +342,20 @@ article {
 article h2 {
     font-size: 2rem;
     margin-top: 40px;
-    color: #ff6347;
+    color: var(--primary-color);
 }
 
 article h3 {
     font-size: 1.5rem;
     margin-top: 30px;
-    color: #ff7f50;
+    color: var(--accent-color);
 }
 
 article p {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #ccc;
+    color: var(--secondary-text-color);
 }
 
 article ul, article ol {
@@ -229,41 +367,30 @@ article li {
     margin-bottom: 10px;
 }
 
-article strong {
-    color: #fff;
-}
-
 article a {
-    color: #ff6347;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color var(--transition-speed) ease;
 }
 
 article a:hover {
-    color: #ff4500;
+    color: var(--secondary-color);
 }
 
-@media (max-width: 768px) {
-    article h2 {
-        font-size: 1.8rem;
-    }
-
-    article h3 {
-        font-size: 1.3rem;
-    }
-}
-
-/* About Section */
+/* =======================
+   9. About Section
+   ======================= */
 .about-container {
     margin-top: -50px;
-    background-color: #fff5f7;
+    background-color: var(--light-pink);
     padding: 60px 20px;
     border-radius: 20px;
     color: #333;
 }
 
 .about-container h2 {
-    font-family: 'Pacifico', cursive;
-    color: #ff69b4;
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-align: center;
@@ -277,9 +404,10 @@ article a:hover {
 }
 
 .about-container i {
-    color: #ff69b4;
+    color: var(--primary-color);
 }
 
+/* Hobbies Section */
 .hobbies {
     display: flex;
     flex-wrap: wrap;
@@ -289,13 +417,13 @@ article a:hover {
 }
 
 .hobby-item {
-    background-color: #ffe4e1;
+    background-color: var(--hobby-background);
     border-radius: 15px;
     padding: 20px;
     width: calc(50% - 30px);
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-speed) ease;
 }
 
 .hobby-item:hover {
@@ -304,13 +432,13 @@ article a:hover {
 
 .hobby-item i {
     font-size: 2.5rem;
-    color: #ff69b4;
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
 .hobby-item h3 {
     font-size: 1.5rem;
-    color: #ff1493;
+    color: var(--secondary-color);
     margin-bottom: 10px;
 }
 
@@ -319,74 +447,27 @@ article a:hover {
     color: #555;
 }
 
+/* Responsive Layout for Hobby Items */
 @media (max-width: 768px) {
     .hobby-item {
         width: 100%;
     }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-        margin-top: -75px;
-    }
 }
 
-/* Centered Content */
+/* =======================
+   10. Centered Content
+   ======================= */
 .center {
     text-align: center;
     margin-top: 20px;
 }
 
-/* Header Styles */
-header {
-    background-color: #222;
-    padding: 20px 0;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-    color: #fff;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-nav ul li {
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    color: #ff6347;
-}
-
-/* Footer Styles */
+/* =======================
+    11. Footer Styles
+    ======================= */
 footer {
     background-color: #222;
-    color: #fff;
+    color: var(--text-color);
     padding: 20px 0;
     text-align: center;
 }
@@ -415,19 +496,22 @@ footer .contact-info ul li {
 }
 
 footer .contact-info a {
-    color: #ff6347;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color var(--transition-speed) ease;
 }
 
 footer .contact-info a:hover {
-    color: #ff4500;
+    color: var(--secondary-color);
 }
 
 footer i {
     margin-right: 8px;
 }
 
-/* Scroll Behavior */
+/* =======================
+    12. Scroll Behavior
+    ======================= */
 html {
     scroll-behavior: smooth;
 }

@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility with IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Title -->
+    <title>Exploring Knowledge Base Solutions for My IT Business - It's Z</title>
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Discover the best tools and platforms for managing client information effectively in an evolving IT business landscape.">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Exploring Knowledge Base Solutions for My IT Business - It's Z">
     <meta property="og:description" content="Discover the best tools and platforms for managing client information effectively in an evolving IT business landscape.">
-    <meta property="og:type" content="article"> <!-- Changed to 'article' for blog post -->
-    
-    <!-- Title -->
-    <title>Exploring Knowledge Base Solutions for My IT Business - It's Z</title> <!-- Added '- It's Z' for branding -->
+    <meta property="og:type" content="article">
     
     <!-- Main CSS File -->
     <link rel="stylesheet" href="/assets/style.css">
@@ -24,7 +24,8 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          integrity="sha384-..." crossorigin="anonymous"> <!-- Replace 'sha384-...' with actual integrity hash -->
+          integrity="sha512-pw8Q+ua0KtM9V+QvNHZ1Fh0v5BZNwH+cuwxG6XZXpH1Nn5q5KNt5Kg+l6H8ZX1t+OdcQmcd9zxQjJ1B/PGMk+A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -50,31 +51,6 @@
         </noscript>
     </div>
 
-    <!-- Script to load header dynamically -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function loadHTML(elementId, url) {
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to load ${url}`);
-                        }
-                        return response.text();
-                    })
-                    .then(data => {
-                        document.getElementById(elementId).innerHTML = data;
-                    })
-                    .catch(error => {
-                        console.error(`Error loading ${url}:`, error);
-                    });
-            }
-
-            // Load header and footer
-            loadHTML('header-hero-placeholder', '/assets/header-hero.html');
-            loadHTML('footer-placeholder', '/assets/contact.html');
-        });
-    </script>
-
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
@@ -90,25 +66,25 @@
         <article class="container" id="content">
             <h2>Introduction</h2>
             <p>As my side IT business continues to grow, managing client information efficiently has become a critical part of streamlining my work. I’ve been looking into various knowledge base platforms and note-taking apps to build a collected resource that stores all relevant client data, making it easier to access information during system maintenance or network troubleshooting. While I currently rely on clients to provide me with this information when needed, I want a solution where I can easily store and retrieve it without interruptions. Here's a look into what I've been considering and why I settled on one platform in particular.</p>
-
+    
             <h2>My Chosen Platform: Slite</h2>
             <p>After testing out several platforms, I’ve decided to go with <strong>Slite</strong>. The main reason for this choice is its cloud syncing capabilities, which ensure that I can access my knowledge base from anywhere, even when I’m on the go. The layout of Slite also fits my organizational needs perfectly. It provides a clear structure for documentation, making it easy to navigate through different topics.</p>
-
+    
             <p>What really sealed the deal for me was its AI-powered organization tools. With AI assistance, I can automate a lot of the organization process, which not only saves time but also helps keep everything neat and searchable. The ability to collaborate seamlessly with team members (should I expand in the future) also makes Slite a future-proof solution for me.</p>
-
+    
             <h2>Other Considerations: Obsidian & GitHub</h2>
             <p>Though Slite is my current choice, I also considered using <strong>Obsidian</strong> with Dropbox for file syncing or setting up something more advanced using <strong>GitHub</strong>. With Obsidian’s flexibility and powerful markdown support, it would be a solid option for creating a more customized knowledge base. The idea of syncing through Dropbox is appealing because it offers a familiar interface, and I'd have control over how my files are shared.</p>
-
+    
             <p>For those looking for a more technical setup, GitHub could be another option. By setting up a script to sync files back and forth, I could control access through GitHub’s permissions. While this approach gives me more control and customizability, it also requires more setup and might be overcomplicating things for my needs. One major concern with using GitHub or Dropbox is securely storing sensitive information like system logins.</p>
-
+    
             <h2>Securely Storing System Logins</h2>
             <p>When it comes to system logins and other sensitive data, I considered incorporating those into my knowledge base, but that presents a security risk. A solution I’ve been leaning toward is <strong>Bitwarden</strong>, a password manager I already use. By creating an organization within Bitwarden, I can securely store and share credentials with clients or team members while maintaining proper access control.</p>
-
+    
             <p>Using Bitwarden allows me to handle security more effectively while still keeping my knowledge base clean and focused on technical information and procedures. It creates a clear separation between system documentation and password management, giving me more peace of mind regarding security.</p>
-
+    
             <h2>The Balance Between Customization and Simplicity</h2>
             <p>Ultimately, my choice of platform comes down to a balance between customization and simplicity. While a DIY approach like using Obsidian or GitHub would give me more control, Slite's ready-made features save me time and effort. As my business evolves, I might revisit these options to see if they better meet my needs in the future, but for now, Slite checks all the boxes for ease of use, cloud accessibility, and AI-driven organization.</p>
-
+    
             <h2>Conclusion</h2>
             <p>Choosing the right knowledge base platform is crucial for any IT business, especially when it comes to managing client information efficiently and securely. For me, Slite’s intuitive design and cloud syncing make it the ideal solution for the current stage of my business. While alternatives like Obsidian and GitHub offer more customization, I found them to be better suited for more complex setups, which I may not need right now. As I continue to expand, tools like Bitwarden will complement my knowledge base by securely storing sensitive information, ensuring that both documentation and security stay top-notch.</p>
         </article>
@@ -117,7 +93,7 @@
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Scripts -->
+    <!-- Script to load header and footer dynamically -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Function to load external HTML content
